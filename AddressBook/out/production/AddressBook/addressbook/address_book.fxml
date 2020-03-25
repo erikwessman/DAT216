@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="addressbook.AddressBookController">
+   <children>
+      <MenuBar fx:id="menuBar" maxHeight="30.0" maxWidth="600.0" minHeight="30.0" minWidth="600.0" prefHeight="30.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="%fileMenu.text">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#newButtonActionPerformed" text="%newContactMenuItem.text">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/New16.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#deleteButtonActionPerformed" text="%deleteContactMenuItem.text">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Delete16.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeApplicationActionPerformed" text="%exitApplicationMenuItem.text" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="%helpMenu.text">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openAboutActionPerformed" text="%aboutMenuItem.text" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ToolBar layoutY="30.0" prefHeight="50.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <items>
+          <Button fx:id="newButton" mnemonicParsing="false" onAction="#newButtonActionPerformed">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/New24.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="%newContactTooltip.text" />
+               </tooltip>
+            </Button>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonActionPerformed">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/Delete24.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="%deleteContactTooltip.text" />
+               </tooltip>
+            </Button>
+         </items>
+      </ToolBar>
+      <SplitPane dividerPositions="0.29797979797979796" layoutY="80.0" prefHeight="320.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="150.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ListView fx:id="listView" prefHeight="318.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="400.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="22.0" layoutY="30.0" prefWidth="90.0" text="%firstNameLabel.text" AnchorPane.leftAnchor="22.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="22.0" layoutY="65.0" prefWidth="90.0" text="%lastNameLabel.text" AnchorPane.leftAnchor="22.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="22.0" layoutY="100.0" prefWidth="90.0" text="%phoneLabel.text" AnchorPane.leftAnchor="22.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="22.0" layoutY="135.0" prefWidth="90.0" text="%emailLabel.text" AnchorPane.leftAnchor="22.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="22.0" layoutY="170.0" prefWidth="90.0" text="%addressLabel.text" AnchorPane.leftAnchor="22.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="22.0" layoutY="205.0" prefWidth="90.0" text="%postcodeLabel.text" AnchorPane.leftAnchor="22.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="22.0" layoutY="240.0" prefWidth="90.0" text="%cityLabel.text" AnchorPane.leftAnchor="22.0" />
+                  <TextField fx:id="firstName" layoutX="116.0" layoutY="26.0" onAction="#textFieldActionPerformed" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="21.0" />
+                    <TextField fx:id="lastName" layoutX="116.0" layoutY="61.0" onAction="#textFieldActionPerformed" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="21.0" />
+                    <TextField fx:id="phone" layoutX="161.0" layoutY="96.0" onAction="#textFieldActionPerformed" prefHeight="25.0" prefWidth="235.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="21.0" />
+                    <TextField fx:id="email" layoutX="116.0" layoutY="131.0" onAction="#textFieldActionPerformed" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="21.0" />
+                    <TextField fx:id="address" layoutX="116.0" layoutY="166.0" onAction="#textFieldActionPerformed" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="21.0" />
+                    <TextField fx:id="postCode" layoutX="116.0" layoutY="201.0" onAction="#textFieldActionPerformed" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="21.0" />
+                    <TextField fx:id="city" layoutX="116.0" layoutY="236.0" onAction="#textFieldActionPerformed" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="21.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

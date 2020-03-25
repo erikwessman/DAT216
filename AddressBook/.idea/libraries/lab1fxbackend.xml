@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="lab1fxbackend">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/lab1fxbackend.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
