@@ -1,0 +1,27 @@
+För kontrollerna:
+
+	Alla olika kontroller har säker inputshantering. Man kan inte välja något ogiltligt värde på någon förutom maxpris och gör man det
+	där (med hjälp av textinput) så väljs ett giltligt värde.
+	
+	Förbättringar:
+		- Göra gränserna tydligare (för slider och spinner)
+		- Göra det omöjligt att dölja kontrollerna genom justering av splitpane
+
+För pliancy/feedback:
+
+	Sökrutan:
+		- Alla knappar har static object hinting. Dvs att de ser ut som knappar tack vare 3D utseendet.
+		- Alla knappar har även dynamic visual hinting då de ändrar bakgrundsfärg "on hover".
+		- Alla knappar förutom comboboxarna har pliant response hinting (skugga aktiveras)
+
+		- Textfältet har en liten del object hinting då det har ett typiskt textfältsutseende. Dessutom har det dynamic visual
+		  hinting i form av att muspekaren ändras "on hover"
+		- Textfältet har även pliant response hinting (skugga aktiveras)
+
+	Sökresultaten/navigering:
+		- I listan med recept så finns ingen pliancy eller feedback alls. Det enda i den högra halvan som har pliancy är scroll-
+		  baren (som har alla tre typer)
+		- I detailed view så finns det bara en knapp och den har alla typer av pliancy
+
+	Förbättringar:
+		- Lägga till olika typer av pliancy på recepten i sökresultatslistan

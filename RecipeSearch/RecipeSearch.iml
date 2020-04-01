@@ -7,7 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lab1fxbackend" level="project" />
+    <orderEntry type="library" name="lab2-backend1" level="project" />
+    <orderEntry type="library" name="lab2-backend" level="project" />
+    <orderEntry type="library" name="RecipeSearch" level="project" />
     <orderEntry type="library" name="lib" level="application" />
   </component>
 </module>
