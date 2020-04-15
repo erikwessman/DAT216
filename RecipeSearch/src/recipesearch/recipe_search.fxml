@@ -10,14 +10,14 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
+<AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" stylesheets="@recipe_search.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
    <children>
       <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -39,29 +39,36 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <ComboBox fx:id="mainIngredientController" layoutX="130.0" layoutY="119.0" prefHeight="25.0" prefWidth="142.0" />
-                        <ComboBox fx:id="cuisineController" layoutX="130.0" layoutY="156.0" prefHeight="25.0" prefWidth="142.0" />
-                        <RadioButton fx:id="difficultyController1" layoutX="127.0" layoutY="206.0" mnemonicParsing="false" text="Alla">
+                        <ComboBox fx:id="mainIngredientController" layoutX="136.0" layoutY="161.0" prefHeight="31.0" prefWidth="129.0" styleClass="text-larger" />
+                        <ComboBox fx:id="cuisineController" layoutX="136.0" layoutY="207.0" prefHeight="31.0" prefWidth="129.0" styleClass="text-larger" />
+                        <RadioButton fx:id="difficultyController1" layoutX="137.0" layoutY="252.0" mnemonicParsing="false" styleClass="text-smaller" text="Alla">
                            <toggleGroup>
                               <ToggleGroup fx:id="difficultyControllers" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="difficultyController2" layoutX="127.0" layoutY="231.0" mnemonicParsing="false" text="Lätt" toggleGroup="$difficultyControllers" />
-                        <RadioButton fx:id="difficultyController3" layoutX="127.0" layoutY="256.0" mnemonicParsing="false" text="Mellan" toggleGroup="$difficultyControllers" />
-                        <RadioButton fx:id="difficultyController4" layoutX="126.0" layoutY="281.0" mnemonicParsing="false" text="Svår" toggleGroup="$difficultyControllers" />
-                        <Spinner fx:id="maxPriceController" editable="true" layoutX="126.0" layoutY="317.0" prefHeight="25.0" prefWidth="142.0" />
-                        <Slider fx:id="maxTimeController" layoutX="127.0" layoutY="364.0" majorTickUnit="10.0" max="150.0" min="10.0" minorTickCount="0" prefHeight="24.0" prefWidth="142.0" showTickMarks="true" snapToTicks="true" value="10.0" />
-                        <Label alignment="CENTER_RIGHT" layoutX="31.0" layoutY="123.0" text="Huvudingrediens:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="101.0" layoutY="160.0" text="Kök:" />
-                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="38.0" layoutY="206.0" text="Svårighetsgrad:" />
-                        <Label layoutX="75.0" layoutY="321.0" text="Maxpris:" />
-                        <Label layoutX="79.0" layoutY="362.0" text="Maxtid:" />
-                        <Label layoutX="13.0" layoutY="34.0" prefHeight="46.0" prefWidth="249.0" text="Hitta ett recept som passar genom att ändra i inställningarna nedanför" textAlignment="CENTER" wrapText="true">
+                        <RadioButton fx:id="difficultyController2" layoutX="137.0" layoutY="277.0" mnemonicParsing="false" styleClass="text-smaller" text="Lätt" toggleGroup="$difficultyControllers" />
+                        <RadioButton fx:id="difficultyController3" layoutX="137.0" layoutY="302.0" mnemonicParsing="false" styleClass="text-smaller" text="Mellan" toggleGroup="$difficultyControllers" />
+                        <RadioButton fx:id="difficultyController4" layoutX="136.0" layoutY="327.0" mnemonicParsing="false" styleClass="text-smaller" text="Svår" toggleGroup="$difficultyControllers" />
+                        <Spinner fx:id="maxPriceController" editable="true" layoutX="132.0" layoutY="361.0" prefHeight="25.0" prefWidth="134.0" />
+                        <Slider fx:id="maxTimeController" layoutX="133.0" layoutY="408.0" majorTickUnit="10.0" max="150.0" min="10.0" minorTickCount="0" prefHeight="24.0" prefWidth="134.0" showTickMarks="true" snapToTicks="true" value="10.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="29.0" layoutY="167.0" styleClass="text-normal" text="Huvudingrediens:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="97.0" layoutY="213.0" styleClass="text-normal" text="Kök:" />
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="36.0" layoutY="250.0" styleClass="text-normal" text="Svårighetsgrad:" />
+                        <Label layoutX="73.0" layoutY="365.0" styleClass="text-normal" text="Maxpris:" />
+                        <Label layoutX="77.0" layoutY="406.0" styleClass="text-normal" text="Maxtid:" />
+                        <Label layoutX="10.0" layoutY="103.0" prefHeight="46.0" prefWidth="249.0" styleClass="text-normal" text="Hitta ett recept som passar genom att ändra i inställningarna nedanför" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="Segoe UI Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="maxTimeValue" layoutX="185.0" layoutY="388.0" text="0 minutes" />
+                        <Label fx:id="maxTimeValue" layoutX="216.0" layoutY="432.0" styleClass="text-smaller" text="0 minutes" />
+                        <ImageView fitHeight="69.0" fitWidth="64.0" layoutX="23.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="logo" layoutX="98.0" layoutY="13.0" text="RECEPT" />
+                        <Label fx:id="logo_twirl" layoutX="159.0" layoutY="52.0" text="SÖK" />
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="148.0" prefWidth="562.0">

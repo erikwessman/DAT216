@@ -1,2 +1,14 @@
+.text-normal {
+    -fx-font-size: 13px;
+    -fx-font-family: "Avenir Book";
+}
 
+.text-smaller {
+    -fx-font-size: 11px;
+    -fx-font-family: "Avenir Book";
+}
 
+.text-larger {
+    -fx-font-size: 15px;
+    -fx-font-family: "Avenir Book";
+}
