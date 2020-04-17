@@ -4,9 +4,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" styleClass="recipe-list-item" stylesheets="@recipe_search.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="listItemImage" fitHeight="90.0" fitWidth="90.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="listItemLabel" layoutX="125.0" layoutY="14.0" text="Label" />
+      <ImageView fx:id="listItemImage" fitHeight="90.0" fitWidth="90.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+      <Label fx:id="listItemName" layoutX="125.0" layoutY="7.0" styleClass="text-larger" text="Namn" />
+      <ImageView fx:id="listItemMainIngredient" fitHeight="20.0" fitWidth="20.0" layoutX="125.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="listItemDifficulty" fitHeight="20.0" fitWidth="62.0" layoutX="149.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="listItemTime" layoutX="237.0" layoutY="30.0" prefHeight="20.0" prefWidth="63.0" styleClass="text-smaller" text="0 minuter" />
+      <Label fx:id="listItemPrice" layoutX="307.0" layoutY="30.0" prefHeight="20.0" prefWidth="46.0" styleClass="text-smaller" text="0 kr" />
+      <Label fx:id="listItemDescription" layoutX="125.0" layoutY="54.0" prefHeight="43.0" prefWidth="349.0" styleClass="text-normal" text="Beskrivning" wrapText="true" />
+      <ImageView fx:id="listItemCuisine" fitHeight="25.0" fitWidth="26.0" layoutX="81.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </fx:root>

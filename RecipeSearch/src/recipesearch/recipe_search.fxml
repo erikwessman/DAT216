@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
@@ -9,6 +8,7 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,23 +19,42 @@
 
 <AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" stylesheets="@recipe_search.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
    <children>
-      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="detailedPane" onMouseClicked="#closeRecipeView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.75);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="detailedPane" prefHeight="490.0" prefWidth="779.0" style="-fx-background-color: #FF0000;">
+            <AnchorPane onMouseClicked="#mouseTrap" prefHeight="502.0" prefWidth="804.0" style="-fx-background-color: #D3D3D3;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                <children>
-                  <Label fx:id="detailedRecipeName" layoutX="33.0" layoutY="28.0" text="Recipe Name" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="detailedRecipeImage" fitHeight="150.0" fitWidth="150.0" layoutX="33.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="closeDetailedView" layoutX="694.0" layoutY="16.0" mnemonicParsing="false" onAction="#closeRecipeView" text="Stäng" />
+                  <ImageView fx:id="detailedRecipeImage" fitHeight="160.0" fitWidth="160.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextArea fx:id="detailedRecipeIngredients" editable="false" layoutX="20.0" layoutY="216.0" prefHeight="200.0" prefWidth="108.0" styleClass="text-normal" wrapText="true" AnchorPane.bottomAnchor="20.0" />
+                  <TextArea fx:id="detailedRecipeInstructions" editable="false" layoutX="200.0" layoutY="153.0" prefHeight="240.0" prefWidth="520.0" styleClass="text-normal" wrapText="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="20.0" />
+                  <Label fx:id="detailedRecipeName" layoutX="200.0" layoutY="24.0" styleClass="text-larger" text="Namn" />
+                  <ImageView fx:id="detailedRecipeMainIngredient" fitHeight="20.0" fitWidth="20.0" layoutX="200.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="detailedRecipeDifficulty" fitHeight="20.0" fitWidth="62.0" layoutX="249.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="detailedRecipeTime" layoutX="362.0" layoutY="47.0" prefHeight="20.0" prefWidth="63.0" styleClass="text-normal" text="0 minuter" />
+                  <Label fx:id="detailedRecipePrice" layoutX="435.0" layoutY="47.0" prefHeight="20.0" prefWidth="46.0" styleClass="text-normal" text="0 kr" />
+                  <ImageView fx:id="closeButtonImageView" fitHeight="20.0" fitWidth="20.0" layoutX="709.0" layoutY="9.0" onMouseClicked="#closeRecipeView" onMouseEntered="#closeButtonMouseEntered" onMouseExited="#closeButtonMouseExited" onMousePressed="#closeButtonMousePressed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/icon_close.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="200.0" layoutY="153.0" style="-fx-font-weight: 700;" styleClass="text-normal" text="Tillagning:" />
+                  <Label layoutX="20.0" layoutY="200.0" style="-fx-font-weight: 700;" styleClass="text-normal" text="Ingredienser:" />
+                  <ImageView fx:id="detailedRecipeCuisine" fitHeight="45.0" fitWidth="45.0" layoutX="146.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="321.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/icon_time.png" />
+                     </image>
+                  </ImageView>
+                  <TextArea fx:id="detailedRecipeDescription" editable="false" layoutX="200.0" layoutY="82.0" prefHeight="58.0" prefWidth="520.0" styleClass="text-normal" wrapText="true" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="20.0" />
                </children>
-               <StackPane.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </StackPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </AnchorPane>
-            <SplitPane fx:id="searchPane" dividerPositions="0.35" prefHeight="507.0" prefWidth="813.0" style="-fx-background-color: #00FF00;">
+         </children>
+      </AnchorPane>
+      <StackPane fx:id="homePane" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane fx:id="searchPane" dividerPositions="0.35" prefHeight="507.0" prefWidth="813.0" style="-fx-background-color: #D3D3D3;">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
@@ -46,9 +65,30 @@
                               <ToggleGroup fx:id="difficultyControllers" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="difficultyController2" layoutX="137.0" layoutY="277.0" mnemonicParsing="false" styleClass="text-smaller" text="Lätt" toggleGroup="$difficultyControllers" />
-                        <RadioButton fx:id="difficultyController3" layoutX="137.0" layoutY="302.0" mnemonicParsing="false" styleClass="text-smaller" text="Mellan" toggleGroup="$difficultyControllers" />
-                        <RadioButton fx:id="difficultyController4" layoutX="136.0" layoutY="327.0" mnemonicParsing="false" styleClass="text-smaller" text="Svår" toggleGroup="$difficultyControllers" />
+                        <RadioButton fx:id="difficultyController2" layoutX="137.0" layoutY="277.0" mnemonicParsing="false" styleClass="text-smaller" text="Lätt" toggleGroup="$difficultyControllers">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_easy.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <RadioButton fx:id="difficultyController3" layoutX="137.0" layoutY="302.0" mnemonicParsing="false" styleClass="text-smaller" text="Mellan" toggleGroup="$difficultyControllers">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_medium.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <RadioButton fx:id="difficultyController4" layoutX="136.0" layoutY="327.0" mnemonicParsing="false" styleClass="text-smaller" text="Svår" toggleGroup="$difficultyControllers">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_hard.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
                         <Spinner fx:id="maxPriceController" editable="true" layoutX="132.0" layoutY="361.0" prefHeight="25.0" prefWidth="134.0" />
                         <Slider fx:id="maxTimeController" layoutX="133.0" layoutY="408.0" majorTickUnit="10.0" max="150.0" min="10.0" minorTickCount="0" prefHeight="24.0" prefWidth="134.0" showTickMarks="true" snapToTicks="true" value="10.0" />
                         <Label alignment="CENTER_RIGHT" layoutX="29.0" layoutY="167.0" styleClass="text-normal" text="Huvudingrediens:" />
@@ -61,14 +101,22 @@
                               <Font name="Segoe UI Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="maxTimeValue" layoutX="216.0" layoutY="432.0" styleClass="text-smaller" text="0 minutes" />
-                        <ImageView fitHeight="69.0" fitWidth="64.0" layoutX="23.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                        <Label fx:id="maxTimeValue" layoutX="195.0" layoutY="430.0" styleClass="text-smaller" text="0 minutes">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_time.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Label>
+                        <ImageView fitHeight="61.0" fitWidth="59.0" layoutX="16.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@resources/logo.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="logo" layoutX="98.0" layoutY="13.0" text="RECEPT" />
-                        <Label fx:id="logo_twirl" layoutX="159.0" layoutY="52.0" text="SÖK" />
+                        <Label fx:id="logo" layoutX="83.0" layoutY="11.0" text="RECEPT" />
+                        <Label fx:id="logo_twirl" layoutX="166.0" layoutY="26.0" prefHeight="69.0" prefWidth="96.0" text="SÖK" />
+                        <ImageView fitHeight="29.0" fitWidth="38.0" layoutX="-5.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="148.0" prefWidth="562.0">
