@@ -1,0 +1,18 @@
+Kontroll av förslag från labb 2:
+
+    De förslag vi hade för sökpanelen och dens kontroller (skriver dem igen nedan) har inte förbättrats, men de förslag vi hade för pliancy/feedback har åtgärdats.
+
+Förbättringsförslag:
+
+    (från labb 2)
+        - Göra gränserna tydligare (för slider och spinner). Siffror på ändarna av slidern. För spinnern hade man kunnat skriva "max: 500kr" diskret och nära den.
+        - Göra det omöjligt att dölja sökpanelen genom justering av splitpane/fönstrets storlek. Sätta limits på minimum storlek av de olika delarna.
+
+	- Kunna söka efter recept på namn. Gäller backend när det kommer till implementation.
+	- Ta bort de recept som inte uppfyller de valda kriterierna. Filtrera istället för att sortera. Gäller backend när det kommer till implementation.
+	- Ha instruktionerna i punktform istället för en "wall of text" som det är nu. Gäller backend när det kommer till implementation.
+	- Fler filter. T.ex för att anpassa för allergier, dieter osv.
+	- Grid of equals istället för lista med resultaten hade gett bättre överblick.
+	- Inte väl anpassat för äldre, framförallt när det gäller storlek på text.
+
+

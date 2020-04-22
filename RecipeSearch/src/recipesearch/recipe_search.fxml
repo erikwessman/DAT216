@@ -24,7 +24,7 @@
             <AnchorPane onMouseClicked="#mouseTrap" prefHeight="502.0" prefWidth="804.0" style="-fx-background-color: #D3D3D3;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                <children>
                   <ImageView fx:id="detailedRecipeImage" fitHeight="160.0" fitWidth="160.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
-                  <TextArea fx:id="detailedRecipeIngredients" editable="false" layoutX="20.0" layoutY="216.0" prefHeight="200.0" prefWidth="108.0" styleClass="text-normal" wrapText="true" AnchorPane.bottomAnchor="20.0" />
+                  <TextArea fx:id="detailedRecipeIngredients" editable="false" layoutX="20.0" layoutY="216.0" prefHeight="200.0" prefWidth="153.0" styleClass="text-normal" wrapText="true" AnchorPane.bottomAnchor="20.0" />
                   <TextArea fx:id="detailedRecipeInstructions" editable="false" layoutX="200.0" layoutY="153.0" prefHeight="240.0" prefWidth="520.0" styleClass="text-normal" wrapText="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="20.0" />
                   <Label fx:id="detailedRecipeName" layoutX="200.0" layoutY="24.0" styleClass="text-larger" text="Namn" />
                   <ImageView fx:id="detailedRecipeMainIngredient" fitHeight="20.0" fitWidth="20.0" layoutX="200.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" />
